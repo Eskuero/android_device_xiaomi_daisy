@@ -43,15 +43,6 @@ AB_OTA_PARTITIONS += \
     boot \
     system
 
-AB_OTA_POSTINSTALL_CONFIG += \
-    RUN_POSTINSTALL_system=true \
-    POSTINSTALL_PATH_system=system/bin/otapreopt_script \
-    FILESYSTEM_TYPE_system=ext4 \
-    POSTINSTALL_OPTIONAL_system=true
-
-PRODUCT_PACKAGES += \
-    otapreopt_script
-
 # AID/fs configs
 PRODUCT_PACKAGES += \
     fs_config_files
@@ -136,20 +127,11 @@ PRODUCT_BOOT_JARS += \
 PRODUCT_PACKAGES += \
     lineage.trust@1.0-service
 
-# Update engine
-PRODUCT_PACKAGES += \
-    brillo_update_payload \
-    update_engine \
-    update_verifier
-
 PRODUCT_STATIC_BOOT_CONTROL_HAL := \
     bootctrl.msm8953 \
     libcutils \
     libgptutils \
     libz
-
-PRODUCT_PACKAGES_DEBUG += \
-    update_engine_client
 
 # USB
 PRODUCT_PACKAGES += \
